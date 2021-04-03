@@ -16,25 +16,4 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/luiz123o/template-nextjs10.svg">
   </a>
 
-  <a href="https://github.com/luiz123o/template-nextjs10/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/luiz123o/template-nextjs10.svg">
-  </a>
 
-
-</p>
-
-<h3 align="center">Technologies</h3>
-
-<ul>
-    <li>NextJs</li>
-    <li>Styled-Components</li>
-    <li>Jest</li>
-    <li>Storybook</li>
-
-  </ul>
-
-<p>For installation just run the command below</p>
-
-  ```
-  yarn create next-app -e https://github.com/luiz123o/template-nextjs10
-  ```
