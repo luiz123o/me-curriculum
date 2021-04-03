@@ -1,6 +1,6 @@
-import * as S from '../../styles/components/Main/styles'
+import * as S from '../../styles/components/Header/styles'
 
-const Main = ({
+const Header = ({
   title = 'Typescript Template for NextJS',
   description = 'Template created for use in projects with React in typescript'
 }) => {
@@ -11,4 +11,4 @@ const Main = ({
     </S.Wrapper>
   )
 }
-export default Main
+export default Header
