@@ -1,20 +1,17 @@
 import type { AppProps } from 'next/app'
-import Head from 'next/head'
-
-import GlobalStyles from 'styles/global'
+import * as themes from '../styles/themes'
+import GlobalStyles from '../styles/global'
+import { ThemeProvider } from 'styled-components'
+import Header from '../components/Header'
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>Boiler Plate</title>
-        <link rel="shortcut icon" href="/img/favicon-ipr.png" />
-        <link rel="apple-touch-icon" href="/img/favicon-ipr.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="description" content="boilerplate" />
-      </Head>
-      <GlobalStyles />
-      <Component {...pageProps} />;
+      <ThemeProvider theme={themes.dark}>
+        <GlobalStyles />
+        <Header />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

@@ -1,14 +1,17 @@
-import * as S from '../../styles/components/Header/styles'
-
+import * as S from './styles'
+import MetaTags from '../MetaTags/index'
+import { NavBar } from './NavBar'
 const Header = ({
-  title = 'Typescript Template for NextJS',
-  description = 'Template created for use in projects with React in typescript'
+  title = 'Luiz Otávio',
+  description = 'Website portifólio'
 }) => {
   return (
-    <S.Wrapper>
-      <h1>{title}</h1>
-      <span>{description}</span>
-    </S.Wrapper>
+    <>
+      <MetaTags title={title} description={description}></MetaTags>
+      <S.Container>
+        <NavBar />
+      </S.Container>
+    </>
   )
 }
 export default Header
