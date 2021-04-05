@@ -7,7 +7,7 @@ type MetaTagsProps = Partial<{
   image: string
 }>
 
-export const MetaTags = (props: MetaTagsProps) => {
+const MetaTags = (props: MetaTagsProps) => {
   const { title, description, canonical, image } = props
 
   const pageTitle = title ? `${title} | Luiz Otavio` : 'Luiz Otavio'
@@ -42,3 +42,4 @@ export const MetaTags = (props: MetaTagsProps) => {
     </Head>
   )
 }
+export default MetaTags
