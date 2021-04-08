@@ -1,47 +1,53 @@
-import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 
 export const NavBar = styled.nav`
   ${({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-
-    height: 10rem;
-    position: fixed;
-    background: ${darken(0.02, theme.colors.background)},
-      linear-gradient(to top, transparent 1%, black 100%),
-      linear-gradient(to top, transparent 1%, black 100%);
-    -webkit-mask-image: ;
-    mask-image: ;
-    color: ${theme.colors.texts.primary};
+    overflow: hidden;
+    line-height: 0;
+    z-index: -999;
+    height: 20rem;
+    svg {
+      position: relative;
+      display: block;
+      width: calc(179% + 1.3px);
+      height: 16rem;
+      fill: ${theme.colors.background.default};
+      fill-opacity: 0.15;
+      z-index: -999;
+    }
   `}
+`
+export const NavContent = styled.div`
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 `
 export const NavContainer = styled.div`
   display: flex;
-  max-width: 100rem;
-  height: 10rem;
-  justify-content: space-between;
+  width: 100%;
+  margin-top: -22rem;
   align-items: center;
-  margin: 0 auto;
+  justify-content: space-between;
 `
 
 export const NavLogo = styled.div`
   ${({ theme }) => css`
+    color: ${theme.colors.texts.default};
     p {
-      font-size: 2.4rem;
-      font-weight: 500;
-      color: ${theme.colors.texts.secondary};
+      padding-right: 1rem;
 
-      strong {
-        margin-left: 0.3rem;
-        margin-right: 0.2rem;
-      }
       span {
-        background-color: #00dbde;
-        background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
-        margin-left: 0.2rem;
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
+        font-size: ${theme.fonts.sizes.lg};
+        font-weight: 700;
+        margin-left: 2rem;
+        color: #330033;
       }
     }
   `}
@@ -49,16 +55,10 @@ export const NavLogo = styled.div`
 
 export const NavMenu = styled.ul`
   display: flex;
-  font-size: 1rem;
-
+  color: #fff;
   li {
-    margin-left: 3rem;
-    list-style: none;
-    a {
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 1.8rem;
-      font-weight: 500;
+    & + li {
+      margin-left: 1rem;
     }
   }
 `
