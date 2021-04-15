@@ -1,59 +1,53 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`
-export const ImageBox = styled.div`
-  position: relative;
-  width: 100%;
   max-width: 320px;
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
+`
+export const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
   align-items: center;
-  height: 100%;
-  padding: 20px;
+
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 10px;
+
+  height: 400px;
+`
+export const ImageBox = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   svg {
-    height: 100%;
-    width: 100px;
-    color: #fff;
+    height: 200px;
   }
 `
 
-export const Card = styled.div`
-  position: relative;
-  width: 320px;
-  height: 420px;
-  background: #122936;
-  border-radius: 2rem;
-  overflow: hidden;
-  ::after {
-    content: 'Mobile';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-weight: 900;
-    font-size: 6rem;
-    color: rgba(255, 255, 255, 0.1);
-  }
-
-  :hover {
-    ::before {
-      top: -70%;
-      transform: skewY(390deg);
-    }
-  }
-  ::before {
-    content: '';
-    position: absolute;
-    top: -50%;
+export const CardText = styled.div`
+  ${({ theme }) => css`
     width: 100%;
-    height: 100%;
-    background: #2196f3;
-    transform: skewY(345deg);
-    transition: 0.6s;
-  }
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    text-align: center;
+
+    h2 {
+      color: ${theme.colors.background.primary};
+      opacity: 0.9;
+      font-size: 2rem;
+      margin-top: -3rem;
+    }
+    p {
+      color: ${theme.colors.texts.default};
+      margin-top: 1.2rem;
+      text-overflow: ellipsis;
+    }
+  `}
 `

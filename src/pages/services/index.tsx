@@ -17,11 +17,19 @@ const Services = () => {
               expedita molestias!
             </p>
           </S.ServicesHeader>
-          <S.ServiceContainerCards>
-            <ServiceCards />
-            <ServiceCards />
-            <ServiceCards />
-          </S.ServiceContainerCards>
+          <S.Wrapper>
+            {Object.entries(SERVICES_CARDS_NAVIGATION).map(([key, value]) => (
+              <S.ServiceContainerCards key={`card-${key}`}>
+                <li>
+                  <ServiceCards
+                    title={value.title}
+                    description={value.description}
+                    image={value.icon}
+                  />
+                </li>
+              </S.ServiceContainerCards>
+            ))}
+          </S.Wrapper>
         </S.Container>
       </S.ServicesSection>
     </>

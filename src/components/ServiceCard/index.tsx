@@ -1,14 +1,23 @@
 import * as S from './styles'
-import { FaMobile } from 'react-icons/fa'
-export const ServiceCards = () => {
+import { SVGAttributes } from 'react'
+
+type ServiceProps = {
+  title: string
+  description: string
+  image: SVGAttributes<SVGElement>
+}
+
+export const ServiceCards = ({ title, description, image }: ServiceProps) => {
   return (
     <>
       <S.Container>
-        <S.Card>
-          <S.ImageBox>
-            <FaMobile />
-          </S.ImageBox>
-        </S.Card>
+        <S.Wrapper>
+          <S.ImageBox>{image}</S.ImageBox>
+          <S.CardText>
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </S.CardText>
+        </S.Wrapper>
       </S.Container>
     </>
   )
