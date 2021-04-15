@@ -1,33 +1,36 @@
 const dark = {
   colors: {
-    background: '#1F2235',
-    primary: '#007bff',
-    secondary: '#6c757d',
-    success: '#28a745',
-    info: '#17a2b8',
-    warning: '#ffc107',
-    danger: ' #dc3545',
-    texts: {
-      primary: '#007bff',
-      secondary: '#ebf8ff'
+    background: {
+      primary: '#287fec',
+      secondary: '#9629ec',
+      default: '#ffffff'
     },
-    toasts: {
-      info: {
-        color: '#3172b7',
-        background: '#ebf8ff'
+    links: {
+      default: '#ffffff'
+    },
+    texts: {
+      title: '#7B1154',
+      subtitle: '#7C1155',
+      default: '#ffffff'
+    },
+    button: {
+      background: {
+        primary: '#ff9e24',
+        secundary: '#ec710c'
       },
-      success: {
-        color: '#2e656a',
-        background: '#e6fffa'
-      },
-      error: {
-        color: '#c53030',
-        background: '#fddede'
-      },
-      warning: {
-        color: '#FF9000',
-        background: '#fcf4e4'
+      border: {
+        default: '#ffffff'
       }
+    }
+  },
+  fonts: {
+    sizes: {
+      xs: '1rem',
+      sm: '1.125rem',
+      md: '1.25rem',
+      lg: '1.5rem',
+      xl: '2.5rem',
+      xxl: '4.5rem'
     }
   }
 } as const

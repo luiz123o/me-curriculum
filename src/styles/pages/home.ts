@@ -1,86 +1,84 @@
 import styled, { css } from 'styled-components'
 
-export const Container = styled.main`
+export const Container = styled.section`
+  max-width: 1120px;
+  width: 100%;
+  height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
   margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
-  max-width: 100rem;
-  height: calc(100vh - 10rem);
-`
-export const ImageContainer = styled.div`
-  img {
-    margin-top: 15rem;
-    width: 50rem;
-    height: 50rem;
-    opacity: 0.9;
-    -webkit-mask-image: linear-gradient(to top, transparent 5%, black 100%);
-    mask-image: linear-gradient(to top, transparent 5%, black 100%);
-    border-radius: 50%;
-  }
 `
 
 export const Content = styled.div`
   ${({ theme }) => css`
-    max-width: 60rem;
     display: flex;
 
-    margin-top: 15rem;
     flex-direction: column;
-    color: ${theme.colors.texts.secondary};
+    height: 100%;
+    z-index: 9999;
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+      color: ${theme.colors.texts.title};
+      opacity: 0.3;
+      font-size: 6rem;
     }
-
+    h2 {
+      font-size: 2rem;
+      color: ${theme.colors.texts.default};
+      text-align: right;
+      margin-left: 0.5rem;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
+    }
     p {
-      font-size: 1.6rem;
-      line-height: 1;
-      margin-bottom: 2.5rem;
-    }
-    strong {
-      font-size: 5rem;
-      font-weight: 900;
-      color: ${theme.colors.texts.primary};
+      color: ${theme.colors.texts.default};
+      font-size: 1.4rem;
     }
   `}
+`
+export const Wrapper = styled.div`
+  display: flex;
+`
+export const ImageContainer = styled.div`
+  img {
+    margin-left: -14rem;
+    margin-top: -8rem;
+    width: 700px;
+    z-index: -999;
+  }
 `
 
 export const SocialLink = styled.ul`
   ${({ theme }) => css`
     display: flex;
-    color: ${theme.colors.texts.secondary};
-
+    color: ${theme.colors.links.default};
     li {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      list-style-type: none;
-      width: 5rem;
-      height: 5rem;
-      border: 3px solid ${theme.colors.texts.primary};
-      border-radius: 50%;
-
-      &:hover {
-        background: ${theme.colors.texts.secondary};
-        svg {
-          fill: ${theme.colors.texts.primary};
-        }
-      }
-
+      align-self: flex-start;
+      margin-top: 2rem;
       & + li {
-        margin-left: 2rem;
+        margin-left: 1rem;
       }
-
       svg {
-        margin-top: 0.4rem;
-        margin-left: 0.09rem;
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
       }
+    }
+  `}
+`
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${({ theme }) => css`
+    margin-top: 4rem;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid ${theme.colors.button.border.default};
+    border-radius: 2rem;
+    color: ${theme.colors.texts.default};
+    svg {
+      margin-left: 0.5rem;
     }
   `}
 `
